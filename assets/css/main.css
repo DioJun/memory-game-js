@@ -1,0 +1,91 @@
+/* Set up body flex container */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fc1e8a;
+}
+
+/* Container layout */
+.container {
+    /* Set relative position */
+    position: relative;
+    /* Enable flexbox */
+    display: flex;
+    /* Set direction and alignment */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Set gap between elements */
+    gap: 30px;
+    /* Apply background gradient */
+    background: linear-gradient(
+        325deg,
+    #03001e 0%,
+    #7303c0 30%,
+    #ec38bc 70%,
+    #fdeff9 100%);
+    /* Add padding for space */
+    padding: 40px 60px;
+}
+h2 {
+    /* 3em font size, uppercase text, and custom colors */
+    font-size: 3em;
+    color: #ffffff;
+    text-transform: uppercase;
+
+    /* Reduced letter spacing for better readability */
+    letter-spacing: 0.1em;
+}
+
+.reset {
+    /* Set padding */
+    padding: 15px 20px;
+    /* Set width */
+    width: 100%;
+    /* Set text color */
+    color: #000;
+    /* Set background color */
+    background-color: #ffffff;
+    /* Remove border */
+    border: none;
+    /* Set font size */
+    font-size: 1.5em;
+    /* Add letter spacing */
+    letter-spacing: 0.1em;
+    /* Set text transform */
+    text-transform: uppercase;
+    /* Set cursor style */
+    cursor: pointer;
+    /* Set font weight */
+    font-weight: 600;
+}
+
+.reset:focus {
+    /* color change on focus */
+    color: #ec38bc;
+
+    /* background color change on focus */
+    background-color: #262809;
+}
+
+.game {
+    width: 430px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
