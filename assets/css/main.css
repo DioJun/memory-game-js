@@ -5,6 +5,8 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #fc1e8a;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 /* Container layout */
@@ -40,6 +42,7 @@ h2 {
 }
 
 .reset {
+    margin-top: 10px;
     /* Set padding */
     padding: 15px 20px;
     /* Set width */
@@ -71,21 +74,89 @@ h2 {
 }
 
 .game {
-    width: 430px;
-    height: 430px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    transform-style: preserve-3d;
-    perspective: 500px;
+    width: 430px; /* Set game width */
+    height: 430px; /* Set game height */
+    display: flex; /* Enable flexbox layout */
+    flex-wrap: wrap; /* Allow flex items to wrap */
+    gap: 10px; /* Set gap between flex items */
+    transform-style: preserve-3d; /* Enable 3D transformations */
+    perspective: 500px; /* Set 3D perspective */
+    
 }
 
-.item{
+.item {
+    /* Relative positioning */
     position: relative;
+    /* 100px width and height */
     width: 100px;
     height: 100px;
+    /* Flex container for centering content */
     display: flex;
     justify-content: center;
     align-items: center;
+    /* White background color */
     background-color: #ffffff;
+    /* Emoji's size */
+    font-size: 5em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    opacity: 85%;
+    inset: 0;
+    background-color: #aeaeae;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.boxOpen::after,
+.boxMatch::after {
+    transform: rotateY(180deg);
+}
+
+/* Adicione essas regras de mídia para estilos específicos para dispositivos móveis */
+@media only screen and (max-width: 600px) {
+    body {
+        /* Para garantir que o conteúdo ocupe a largura total da tela */
+        padding: 20px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    h2 {
+        /* 3em font size, uppercase text, and custom colors */
+        text-align: center;
+    }
+
+    .container {
+        /* Ajuste o padding para telas menores */
+        padding: 20px;
+        width: 100vh;
+        height: 100vh;
+    }
+
+    .game {
+        /* Ajuste a largura do jogo para telas menores */
+        width: 100%;
+        /* Ajuste a altura do jogo para telas menores ou remova para ocupar o espaço necessário */
+        height: 300px;
+        justify-content: space-around;
+        gap: 9px;
+    }
+
+    .item {
+        /* Ajuste a largura e a altura dos itens para telas menores */
+        width: 22%;
+        height: 25%;
+        /* Ajuste o tamanho da fonte para telas menores */
+        font-size: 2em;
+    }
 }
