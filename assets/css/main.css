@@ -125,7 +125,7 @@ h2 {
 @media only screen and (max-width: 600px) {
     body {
         /* Para garantir que o conteúdo ocupe a largura total da tela */
-        padding: 20px;
+        
         text-align: center;
         justify-content: center;
     }
@@ -133,6 +133,7 @@ h2 {
     h2 {
         /* 3em font size, uppercase text, and custom colors */
         text-align: center;
+        
     }
 
     .container {
